@@ -8,7 +8,7 @@ let vote = () => urllib.request('http://www.xicidaili.com/nn/', (err, data, res)
 
   var proxies = data.toString().match(/<td>\d+\.\d+\.\d+\.\d+<\/td>\n\s+<td>\d+<\/td>/g)
 
-  proxies.forEach((proxy) => {
+  proxies && proxies.forEach((proxy) => {
     proxy = proxy.replace(/[\s\n]/g, '')
       .replace(/<\/td><td>/, ':')
       .replace(/<\/*td>/g, '')
